@@ -12,6 +12,7 @@ window.onload = function () {
     var group1 = new Konva.Group({x: 50, y: 150, name: 'g1', draggable: true,});
     var group2 = new Konva.Group({x: 200, y: 50, name: 'g2', draggable: true,});
 
+    // делаем болванку
     var box = new Konva.Rect({
         width: 50,
         height: 50,
@@ -19,6 +20,7 @@ window.onload = function () {
         stroke: 'black',
         strokeWidth: 1,
     });
+    // с болванки делаем клонов с нужными параметрами
     var box1 = box.clone({name: 'box1'});
     var box2 = box.clone({name: 'box2', offsetX: -50});
 
@@ -35,6 +37,7 @@ window.onload = function () {
     var rightConnector = connector.clone({name: 'cright', offsetX: -50});
     var rightConnector2 = connector.clone({name: 'cright', offsetX: -100});
 
+    //todo переписать логику
     var box1box2Mid = {}
     if (group1.position().x < group2.position().x) {
         box1box2Mid.x = ((group2.position().x - group1.position().x) / 2) + group1.position().x+75;
